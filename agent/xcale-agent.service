@@ -1,0 +1,18 @@
+[Unit]
+Description=xcale agent
+Documentation=file:///opt/agent/readme.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# URL, cluster, token, root and the rest come from this file (see xcale-agent.env)
+EnvironmentFile=/opt/agent/xcale-agent.env
+WorkingDirectory=/opt/agent
+ExecStartPre=/usr/bin/mkdir -p ${XCALE_ROOT}
+ExecStart=/opt/agent/xcale-agent
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

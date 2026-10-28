@@ -1,0 +1,21 @@
+{
+  "name": "xcale-server",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.ts",
+    "seed": "node src/seed.ts",
+    "seed:demo": "node src/seed.ts --demo",
+    "token": "node src/token.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "@types/ws": "^8.5.0",
+    "typescript": "^5"
+  }
+}

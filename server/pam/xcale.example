@@ -1,0 +1,15 @@
+#%PAM-1.0
+# Example PAM service for the xcale web login. Install as /etc/pam.d/xcale
+# (the service name is XCALE_PAM_SERVICE, "xcale" by default).
+#
+# Arch / Manjaro / Fedora style:
+auth     include  system-auth
+account  include  system-auth
+#
+# Debian / Ubuntu style:
+#auth    include  common-auth
+#account include  common-account
+#
+# The process that runs the xcale server must be able to verify other users:
+# pam_unix needs to read /etc/shadow (run as root, or add the user to the shadow
+# group / use a PAM stack such as sssd or ldap that does not need it).
